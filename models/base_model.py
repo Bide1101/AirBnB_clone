@@ -19,7 +19,7 @@ class BaseModel:
             # storage.new(self)
             pass #take this line off later
         else:
-            d = "%Y=%m-%dT%H:%M:%S.%f"
+            d = "%Y-%m-%dT%H:%M:%S.%f"
             for key, value in kwargs.items():
                 if key == 'created_at':
                     value = datetime.strptime(kwargs[key], d)
