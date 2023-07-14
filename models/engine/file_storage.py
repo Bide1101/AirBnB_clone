@@ -7,6 +7,7 @@ we convert the dictionary representation to a JSON string
 """
 import json
 import os
+from models.base_model import BaseModel
 # from models.base_model import BaseModel
 
 class FileStorage:
@@ -35,7 +36,7 @@ class FileStorage:
     def reload(self):
         """This deserializes JSON files to objects if the exist"""
         try:
-            from models.base_model import BaseModel
+            # from models.base_model import BaseModel
             objDict = {}
             with open(self.__file_path, mode="r", encoding="UTF-8") as newFile:
                 for key, value in json.load(newFile).items():
