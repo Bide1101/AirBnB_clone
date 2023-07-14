@@ -36,13 +36,10 @@ class FileStorage:
     def reload(self):
         """This deserializes JSON files to objects if the exist"""
         try:
-            # from models.base_model import BaseModel
-            objDict = {}
-            with open(self.__file_path, mode="r", encoding="UTF-8") as newFile:
-                for key, value in json.load(newFile).items():
-                    objDict = self.new(classDict[value['__class__']](**value))
-                    self.__objects[key] = objDict
-
-        except (FileNotFoundError, NameError): # delete name error when classDict is available
-            """this makes sure no error is raised if the file is not found"""
+            with open(self.__file_path, mode='r', encoding='utf-8') as jfile:
+                all_objs = json.loads(jfile.read())
+            for obj_id, obj in all_objs.items():
+                name_class = obj_id.split(".")[0]
+                self.new(eval(name_class + "(**obj)"))
+        except:
             pass
