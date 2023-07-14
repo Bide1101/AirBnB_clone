@@ -13,7 +13,7 @@ class FileStorage:
     """this sertializes instance to a JSON file and deserializes vice versa"""
     __file_path = "file.json"
     __objects = {}
-    classDict = {} # should be filled when the classes to be reloaded are created later
+    classDict = {'BaseModel': BaseModel} # should be filled when the classes to be reloaded are created later
 
     def all(self):
         """This returns the dictionary __objects"""
@@ -36,7 +36,7 @@ class FileStorage:
         """This deserializes JSON files to objects if the exist"""
         try:
             from models.base_model import BaseModel
-            objDict = {'BaseModel': BaseModel}
+            objDict = {}
             with open(self.__file_path, mode="r", encoding="UTF-8") as newFile:
                 for key, value in json.load(newFile).items():
                     objDict = self.new(classDict[value['__class__']](**value))
