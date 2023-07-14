@@ -1,8 +1,9 @@
-
 #!/usr/bin/python3
 """
 This is a base model that defines all the common methods for other classes
 """
+
+
 import uuid
 from datetime import datetime
 import models
