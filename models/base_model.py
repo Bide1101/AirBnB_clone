@@ -5,7 +5,7 @@ This is a base model that defines all the common methods for other classes
 """
 import uuid
 from datetime import datetime
-# from models import storage
+from models import storage
 
 
 class BaseModel:
@@ -16,8 +16,7 @@ class BaseModel:
         self.created_at = datetime.now()
         self.updated_at = self.created_at
         if len(kwargs) < 0:
-            # storage.new(self)
-            pass #take this line off later
+            storage.new(self)
         else:
             d = "%Y-%m-%dT%H:%M:%S.%f"
             for key, value in kwargs.items():
@@ -38,7 +37,8 @@ class BaseModel:
     def save(self):
         """"This updates the public instance attribute with current datetime"""
         self.updated_at = datetime.now()
-        # storage.save()
+        storage.new(self)
+        storage.save()
 
     def to_dict(self):
         """This returns a dictionary containing all keys/
