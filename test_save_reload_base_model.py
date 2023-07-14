@@ -1,6 +1,12 @@
 #!/usr/bin/python3
+"""The code below showcases how to reload objects from storage,
+create a new object, and print its representation.
+"""
+
+
 from models import storage
 from models.base_model import BaseModel
+
 
 all_objs = storage.all()
 print("-- Reloaded objects --")

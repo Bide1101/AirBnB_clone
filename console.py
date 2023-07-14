@@ -2,6 +2,8 @@
 """
 This program contains the entry point of the command interpreter
 """
+
+
 import cmd
 import sys
 
@@ -21,6 +23,7 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def emptyline(self):
+        """This does not do anything"""
         pass
 
     def help_help(self, arg):
