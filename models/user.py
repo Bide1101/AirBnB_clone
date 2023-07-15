@@ -4,8 +4,7 @@ This is a class User that inheritds from baseModel
 """
 
 
-from  models.base_model import BaseModel
-
+from models.base_model import BaseModel
 
 
 class User(BaseModel):
