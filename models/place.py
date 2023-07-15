@@ -6,6 +6,7 @@ Place
 
 from models.base_model import BaseModel
 
+
 class Place(BaseModel):
     """what the place is like"""
     city_id = ""
