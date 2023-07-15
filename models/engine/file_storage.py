@@ -5,6 +5,8 @@ to store first object, and to make sure the python code
 is  not just easily readable, but usable with another language,
 we convert the dictionary representation to a JSON string
 """
+
+
 import json
 import os
 from models.base_model import BaseModel
@@ -14,6 +16,7 @@ from models.city import City
 from models.amenity import Amenity
 from models.place import Place
 from models.review import Review
+
 
 class FileStorage:
     """this sertializes instance to a JSON file and deserializes vice versa"""
@@ -54,5 +57,5 @@ class FileStorage:
             for obj_id, obj in all_objs.items():
                 name_class = obj_id.split(".")[0]
                 self.new(eval(name_class + "(**obj)"))
-        except:
+        except Exception:
             pass
