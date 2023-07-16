@@ -73,9 +73,7 @@ class HBNBCommand(cmd.Cmd):
             print(newInstance.id)
 
     def do_show(self, className):
-        """This prints the string representation of
-        an instance based on classname and id
-        """
+        """This prints the string representation of classname and id"""
         if not className:
             print("** class name missing **")
         else:
