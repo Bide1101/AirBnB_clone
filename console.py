@@ -52,7 +52,7 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def emptyline(self):
-        """This does not do anything"""
+        """This does not do anything but skip"""
         pass
 
     def help_help(self, arg):
@@ -186,6 +186,7 @@ class HBNBCommand(cmd.Cmd):
         # print("** class doesn't exist **")
 
     def parse(arg):
+        """This converts a string of words into a tuple"""
         return tuple(arg.split())
 
 
