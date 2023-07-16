@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Place
+Information about the place where the apartments is located
 """
 
 
@@ -8,7 +8,7 @@ from models.base_model import BaseModel
 
 
 class Place(BaseModel):
-    """what the place is like"""
+    """Represents a place with its associated information"""
     city_id = ""
     user_id = ""
     name = ""

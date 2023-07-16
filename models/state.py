@@ -8,5 +8,5 @@ from models.base_model import BaseModel
 
 
 class State(BaseModel):
-    """The state of the complete address"""
+    """The state of the complete address of apartment"""
     name = ""

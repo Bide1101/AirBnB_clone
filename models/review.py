@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-subclass Review
+subclass Review about the apartments
 """
 
 
