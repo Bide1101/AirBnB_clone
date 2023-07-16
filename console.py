@@ -26,7 +26,15 @@ classDict = {
         'Place': Place,
         'Review': Review
         }
-
+"""
+classDict = ["BaseModel",
+            "User",
+            "State",
+            "City",
+            "Amenity",
+            "Review"
+            "Place"]
+"""
 class HBNBCommand(cmd.Cmd):
     """this implements quit and EOF, help, a custom prompt"""
     prompt = '(hbnb) '
@@ -119,7 +127,20 @@ class HBNBCommand(cmd.Cmd):
                 objectName = value.__class__.__name__
                 if objectName == names[0]:
                     instanceList += [value.__str__()]
-                print(instanceList)
+                    print(instanceList)
+        # args = className.split('.')
+        # if not className.endswith('.all()'):
+            # print("Invalid command format. Usage: <class name>.all()")
+            # return
+
+        # class_name = className[:-6]
+        # if class_name not in classDict:
+            # print("** Class doesn't exist **")
+            # return
+
+        # instances = classDict[class_name].all()
+        # for instance in instances:
+            # print(str(instance))
 
     def do_update(self, arguments):
         """This updates an instance based on the class name and id 
@@ -149,5 +170,23 @@ class HBNBCommand(cmd.Cmd):
             else:
                 print("** instance id missing **")
 
+    def count(self, className):
+        """This retrieves the number of instances of a class"""
+        # if className in HBNBCommand.classDict:
+        count = 0
+        allObjects = storage.all()
+            # for key, value in allObjects.all().items():
+        for nameID in allObjects.keys():
+            if nameID.split(".")[0] == className:
+                # clasS = key.split('.')
+                # if clasS[0] == className:
+                # if className in key:
+                count += 1
+        print(count)
+            # else:
+            # print("** class doesn't exist **")
+
+    def parse(arg):
+        return tuple(arg.split())
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
