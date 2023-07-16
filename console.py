@@ -35,6 +35,8 @@ classDict = ["BaseModel",
             "Review"
             "Place"]
 """
+
+
 class HBNBCommand(cmd.Cmd):
     """this implements quit and EOF, help, a custom prompt"""
     prompt = '(hbnb) '
@@ -141,9 +143,8 @@ class HBNBCommand(cmd.Cmd):
         # instances = classDict[class_name].all()
         # for instance in instances:
             # print(str(instance))
-
     def do_update(self, arguments):
-        """This updates an instance based on the class name and id 
+        """This updates an instance based on the class name and id
         by adding or updating the attribute
         and saves the changes to the JSON file
         """
@@ -175,7 +176,7 @@ class HBNBCommand(cmd.Cmd):
         # if className in HBNBCommand.classDict:
         count = 0
         allObjects = storage.all()
-            # for key, value in allObjects.all().items():
+        # for key, value in allObjects.all().items():
         for nameID in allObjects.keys():
             if nameID.split(".")[0] == className:
                 # clasS = key.split('.')
@@ -183,10 +184,12 @@ class HBNBCommand(cmd.Cmd):
                 # if className in key:
                 count += 1
         print(count)
-            # else:
-            # print("** class doesn't exist **")
+        # else:
+        # print("** class doesn't exist **")
 
     def parse(arg):
         return tuple(arg.split())
+
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
